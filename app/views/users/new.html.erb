@@ -1,14 +1,15 @@
 <h1>Rails Form Project</h1>
 
 <form action="/users" method="post" accept-charset="UTF-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="name">Name:</label>
-  <input type="text" id="name" value="Joe Smurf">
+  <input type="text" name="name" value="Joe Smurf">
   <br>
-  <label for="mail">Email:</label>
-  <input type="email" id="mail" value="joesurf@email.com">
+  <label for="email">Email:</label>
+  <input type="email" name="email" value="joesurf@email.com">
   <br>
-  <label for="pword">Password:</label>
-  <input type="password" id="pword">
+  <label for="password">Password:</label>
+  <input type="password" name="password">
   <br>
   <input type="submit" value="Submit">
 </form>
