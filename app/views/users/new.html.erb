@@ -30,16 +30,32 @@
 <% end %>
  -->
 
-
 <%= form_with model: @user do |form| %>
-  <%= form.label :username, "name:" %>
-  <%= form.text_field :username %>
-  <br>
-  <%= form.label :email, "email:" %>
-  <%= form.email_field :email %>
-  <br>
-  <%= form.label :password, "password:" %>
-  <%= form.password_field :password %>
-  <br>
+  <% if @user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :username, "name:" %>
+    <%= form.text_field :username %>
+  </div>
+  <div>
+    <%= form.label :email, "email:" %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password, "password:" %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
   <%= form.submit "Search" %>
+  </div>
 <% end %>

@@ -1,17 +1,17 @@
 <h1>Rails Edit Form Project</h1>
-
-
-
-
-<%= form_with model: @user do |form| %>
-  <%= form.label :username, "name:" %>
-  <%= form.text_field :username %>
-  <br>
-  <%= form.label :email, "email:" %>
-  <%= form.email_field :email %>
-  <br>
-  <%= form.label :password, "password:" %>
-  <%= form.password_field :password %>
-  <br>
-  <%= form.submit "Update" %>
+  <div>
+    <%= form.label :username, "name:" %>
+    <%= form.text_field :username %>
+  </div>
+  <div>
+    <%= form.label :email, "email:" %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.label :password, "password:" %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.submit "Update" %>
+  </div>
 <% end %>
